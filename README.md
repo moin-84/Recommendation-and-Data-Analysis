@@ -32,49 +32,48 @@ Setup Instructions<br>
 Clone the Repository:<br>
 git clone https://github.com/your-username/your-repo-name.git<br>
 cd your-repo-name<br>
+<br>
 
+Install Dependencies:Create a virtual environment and install the required packages:<br>
+python -m venv venv<br>
+source venv/bin/activate  # On Windows: venv\Scripts\activate<br>
+pip install -r requirements.txt<br>
+<br>
+<br>
+Set Up Firebase:<br>
 
-Install Dependencies:Create a virtual environment and install the required packages:
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+Create a Firebase project at Firebase Console.<br>
+Enable Email/Password Authentication in the Authentication section.<br>
+Set up Firestore in the Database section.<br>
+Download your service account key (your-firebase-credentials.json) and place it in the project root.<br>
+Update account.py with your Firebase Web API key (replace the existing key in the sign_up_with_email_and_password and sign_in_with_email_and_password functions).<br>
+<br>
+<br>
+Add the Dataset:<br>
 
+Ensure gps.csv is in the project root. This file contains the Google Play Store data used by the app.<br>
+<br>
 
-Set Up Firebase:
+Run the Application:<br>
+streamlit run main.py<br>
+<br>
+The app will open in your default browser at http://localhost:8501.<br>
+<br>
 
-Create a Firebase project at Firebase Console.
-Enable Email/Password Authentication in the Authentication section.
-Set up Firestore in the Database section.
-Download your service account key (your-firebase-credentials.json) and place it in the project root.
-Update account.py with your Firebase Web API key (replace the existing key in the sign_up_with_email_and_password and sign_in_with_email_and_password functions).
+Requirements<br>
+Install the following dependencies using pip install -r requirements.txt. The requirements.txt file should include:<br>
+streamlit<br>
+pandas<br>
+plotly<br>
+firebase-admin<br>
+requests<br>
+<br>
+Usage<br>
 
-
-Add the Dataset:
-
-Ensure gps.csv is in the project root. This file contains the Google Play Store data used by the app.
-
-
-Run the Application:
-streamlit run main.py
-
-The app will open in your default browser at http://localhost:8501.
-
-
-Requirements
-Install the following dependencies using pip install -r requirements.txt. The requirements.txt file should include:
-streamlit
-pandas
-plotly
-firebase-admin
-requests
-
-Create the requirements.txt file with the above content if it doesn't exist.
-Usage
-
-Login/Signup: Use the sidebar to sign up with a username, email, and password, or log in with existing credentials.
-Explore Data: On the Home page, filter the dataset by category, rating, or other attributes, and view interactive visualizations.
-View Activity: Check your activity history on the Activity page, where you can delete specific records.
-Sign Out: Log out from the account page to end your session.
+Login/Signup: Use the sidebar to sign up with a username, email, and password, or log in with existing credentials.<br>
+Explore Data: On the Home page, filter the dataset by category, rating, or other attributes, and view interactive visualizations.<br>
+View Activity: Check your activity history on the Activity page, where you can delete specific records.<br>
+Sign Out: Log out from the account page to end your session.<br>
 
 Dataset
 The gps.csv file contains Google Play Store app data with columns such as:
